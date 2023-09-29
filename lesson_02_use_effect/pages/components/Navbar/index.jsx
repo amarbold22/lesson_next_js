@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <header class="flex h-24 min-w-[500px] justify-evenly items-center py-6 bg-slate-100">
         <a href="/">
-            <img class="rounded-xl w-30 h-20 hidden lg:inline-block" src="https://www.creativefabrica.com/wp-content/uploads/2020/07/01/Letter-B-logo-to-business-or-technology-Graphics-4517437-1.jpg" alt="logo"/>
+            <img class="rounded-xl hidden lg:inline-block" src="Logo.jpg" alt="logo"/>
         </a>
         <div class="flex gap-20 text-xl font-semibold">
             <a href="/">Home</a>

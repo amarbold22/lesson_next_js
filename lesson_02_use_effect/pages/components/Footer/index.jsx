@@ -26,7 +26,7 @@ const Footer = () => {
         <hr class="mt-3"/>
         <div class="pt-4 flex justify-between items-center ">
             <div class="flex items-center">
-                <img class="rounded-xl w-30 h-20 hidden lg:inline-block" src="https://www.creativefabrica.com/wp-content/uploads/2020/07/01/Letter-B-logo-to-business-or-technology-Graphics-4517437-1.jpg" alt="logo"/>
+                <img class="rounded-xl pr-4 hidden lg:inline-block" src="smallLogo.jpg" alt="logo"/>
                 <div class="flex flex-col">
                     <div class="text-xl">Meta<span class="font-bold">Blog</span></div>
                     <div>© All rights Reserved</div>
