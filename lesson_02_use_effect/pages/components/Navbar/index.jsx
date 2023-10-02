@@ -6,12 +6,12 @@ const Navbar = () => {
         <a href="/">
             <img class="rounded-xl hidden lg:inline-block" src="Logo.jpg" alt="logo"/>
         </a>
-        <div class="flex gap-20 text-xl font-semibold">
+        <div class="hidden justify-center md:flex md:justify-evenly gap-4 md:gap-20 text-xl font-semibold">
             <a href="/">Home</a>
             <a href="/blog">Blog</a>
             <a href="/contact">Contact</a>
         </div>
-        <div class="h-10 lg:flex border border-gray-400 rounded-xl justify-center items-center px-2">
+        <div class="flex h-10 border border-gray-400 rounded-xl justify-center items-center px-2 mx-auto sm:mx-0">
             <input placeholder="Search" class="bg-slate-100 px-4 rounded-md"/>
             <button>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 30 30">

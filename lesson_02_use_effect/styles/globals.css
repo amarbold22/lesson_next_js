@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.blog-content p{
+    @apply my-4;
+}
+
+.blog-content ol{
+    @apply list-decimal; 
+}
+
+.blog-content h2{
+    @apply text-2xl;
+    @apply my-6;
+    @apply font-semibold;
+}

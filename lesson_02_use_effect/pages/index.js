@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <main>
-      <section class="flex justify-center gap-8 mt-4">
+      <section class="flex justify-center gap-8 mt-4 px-4 w-full">
         <div class="flex">  
           <div class="flex flex-col gap-8 w-[592px] h-[432px]">
               <h3>Recent Blog posts</h3>
