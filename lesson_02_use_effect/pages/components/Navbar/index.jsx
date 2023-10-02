@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <header class="flex h-24 min-w-[500px] justify-evenly items-center py-6 bg-slate-100">
+    <header class="flex h-24 min-w-[500px] lg:justify-evenly justify-evenly items-center py-6 bg-slate-100">
         <a href="/">
             <img class="rounded-xl hidden lg:inline-block" src="Logo.jpg" alt="logo"/>
         </a>
@@ -11,7 +11,7 @@ const Navbar = () => {
             <a href="/blog">Blog</a>
             <a href="/contact">Contact</a>
         </div>
-        <div class="hidden h-10 lg:flex border border-gray-400 rounded-xl justify-center items-center px-2">
+        <div class="h-10 lg:flex border border-gray-400 rounded-xl justify-center items-center px-2">
             <input placeholder="Search" class="bg-slate-100 px-4 rounded-md"/>
             <button>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 30 30">
