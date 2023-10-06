@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { formatDate } from '../utils/function';
+import { formatDate } from '../../utils/function';
 import { useState } from 'react';
 
 const BlogDetail = () => {
@@ -21,7 +21,7 @@ const BlogDetail = () => {
     }, []);
 
   return (
-    <div className="container mx-auto mt-24 max-w-4xl">
+    <div className="container mx-auto pl-2 pb-6 pt-10 max-w-4xl bg-slate-300">
         <div>
         {blogDetailData ? (
             <>
