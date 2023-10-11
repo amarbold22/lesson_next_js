@@ -1,36 +1,43 @@
-import React from 'react'
-import Link from 'next/link'
-// import { usePathname } from next/navigation
-import Home from '@/pages';
+import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+
+const navigations = [
+    {
+        name: "Home",
+        path: "/",
+    },
+    {
+        name: "Blog",
+        path: "/blog",
+    },
+    {
+        name: "Contact",
+        path: "/contact",
+    }
+];
 
 const Navbar = () => {
-    // const isActive = usePathname();
-    // const navigations = [
-    //     {
-    //         name: "Home",
-    //         path: "/"
-    //     },
-    //     {
-    //         name: "Blog",
-    //         path: "/blog"
-    //     },
-    //     {
-    //         name: "Contact",
-    //         path: "/contact"
-    //     }
-    // ]
+    const isActive = usePathname();   
   return (
     <header class="flex h-24 min-w-[500px] lg:justify-evenly justify-evenly items-center py-6 bg-slate-100">
         <a href="/">
-            <img class="rounded-xl hidden lg:inline-block" src="Logo.jpg" alt="logo"/>
+            <Image width={150}  height={100} class="rounded-xl hidden lg:inline-block" src="/Logo.jpg" alt="logo"/>
         </a>
-        <div class="hidden justify-center md:flex md:justify-evenly gap-4 md:gap-20 text-xl font-semibold">
-    {/* {navigations.map((navigation) => {
-        <Link href={navigation.path}>{navigation.name}</Link>
-    })} */}
-            <Link href="/">Home</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact</Link>
+        <div  class="hidden justify-center md:flex md:justify-evenly gap-4 md:gap-20 text-xl font-semibold">
+            {navigations.map((navigation, i) => {
+                <Link className={`font-bold transition-all duration-75 ${
+                    isActive === navigation.path
+                        ? "text-red-500"
+                        : "hover:text-red-500"
+                }`}
+                key={i}
+                href={navigation.path}>{navigation.name}</Link>
+            // <Link href="/">Home</Link>
+            // <Link href="/blog">Blog</Link>
+            // <Link href="/contact">Contact</Link>
+            })}
         </div>
         <div class="flex h-10 border border-gray-400 rounded-xl justify-center items-center px-2 mx-auto sm:mx-0">
             <input class="bg-slate-100 px-4 rounded-md border-none" placeholder="Search"/>
@@ -44,4 +51,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

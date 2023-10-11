@@ -7,7 +7,7 @@ const BlogDetail = () => {
     const router = useRouter();
     const { id } = router.query;
 
-    const [blogDetailData, setDetailData] = useState();
+    const [blogDetailData, setDetailData] = useState(null);
     
     const getBlogDetail = async () => {
         const res = await fetch(`https://dev.to/api/articles/${id}`);
@@ -40,9 +40,7 @@ const BlogDetail = () => {
                     </div>
                 </div>
                 <div className="mt-8">
-                    <div className="blog-content" 
-                    dangerouslySetInnerHTML={{ __html: blogDetailData.body_html }}>
-
+                    <div className="blog-content" dangerouslySetInnerHTML={{ __html: blogDetailData.body_html }}>
                     </div>
                 </div>
             </>
