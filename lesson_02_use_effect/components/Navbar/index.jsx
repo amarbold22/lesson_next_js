@@ -25,18 +25,15 @@ const Navbar = () => {
         <a href="/">
             <Image width={150}  height={100} class="rounded-xl hidden lg:inline-block" src="/Logo.jpg" alt="logo"/>
         </a>
-        <div  class="hidden justify-center md:flex md:justify-evenly gap-4 md:gap-20 text-xl font-semibold">
+        <div class="hidden justify-center md:flex md:justify-evenly gap-4 md:gap-20 text-xl font-semibold">
             {navigations.map((navigation, i) => {
-                <Link className={`font-bold transition-all duration-75 ${
-                    isActive === navigation.path
-                        ? "text-red-500"
-                        : "hover:text-red-500"
-                }`}
-                key={i}
-                href={navigation.path}>{navigation.name}</Link>
-            // <Link href="/">Home</Link>
-            // <Link href="/blog">Blog</Link>
-            // <Link href="/contact">Contact</Link>
+                    <Link className={`font-bold transition-all duration-75 ${
+                        isActive === navigation.path
+                            ? "text-red-500"
+                            : "hover:text-red-500"
+                    }`}
+                    key={i}
+                    href={navigation.path}>{navigation.name}</Link>
             })}
         </div>
         <div class="flex h-10 border border-gray-400 rounded-xl justify-center items-center px-2 mx-auto sm:mx-0">

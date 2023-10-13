@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Card from './components/Card';
-import Loader from './components/Loader';
-import { formatDate, getData } from './utils/function';
+import Card from '../components/Card';
+import Loader from '../components/Loader';
+import { formatDate, getData } from '../utils/function';
 
 export default function Home({blogs, latestBlogs}){
-  const [pages, setPages] = useState(9);
+  
   // const [blogs, setBlogs] = useState([]);
   // const [latestBlogs, setLatestBlogs] = useState([]);
   // const [isLoading, setIsLoading] = useState(true);
@@ -17,8 +17,8 @@ export default function Home({blogs, latestBlogs}){
 
   return (
     <main className="bg-purple-400 w-screen">
-      {!isLoading ? 
-          <>
+      
+         
           <section className="xl:w-[1216px] mx-auto sm:px-8">
             <div className="xl:grid xl:grid-cols-2 xl:gap-6">
               <p className="text-center xl:text-left col-span-2 py-6 font-semibold text-2xl">Recent Blog Posts</p>
@@ -58,21 +58,14 @@ export default function Home({blogs, latestBlogs}){
           </div>
           <button onClick={handleLoad} className="px-4 py-2 bg-blue-400 rounded-lg my-6 text-white">Load More</button>
         </section>
-        </>
-          : (
-            <div className="flex justify-center items-center h-[500px]">
-                <Loader/>
-            </div>
-          )
-      }
-      
-      
-      
+     
+  
+    
     </main>
   )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
   const res1 = await fetch(`https://dev.to/api/articles?per_page=9`);
   const blogs = await res1.json();
 
