@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 import { formatDate } from '../../utils/function';
-import { useState } from 'react';
 
 const BlogDetail = ({ article }) => {
   return (
@@ -31,24 +29,30 @@ const BlogDetail = ({ article }) => {
  </div>
   )
 }
-export default BlogDetail;
 
 export async function getStaticProps(context){
     const { id } = context.params;
     const res = await fetch(`https:/www.dev.to/api/articles/${id}`);
     const article = await res.json();  
     return {
-        props: { article },
+        props: { article }
     };
 }
 
 export async function getStaticPaths(){
-    const res = await fetch(`https://www.dev.to/api/articles?per_page=5`);
-    const articles = await res.json();
-    const ids = articles.map((articles) => articles.id);
+    const res1 = await fetch(`https://www.dev.to/api/articles?per_page=9`);
+    const articles1 = await res1.json();
+    const res2 = await fetch(`https://www.dev.to/api/articles/latest?per_page=4`);
+    const articles2 = await res2.json();
+    const ids1 = articles1.map((article) => article.id);
+    const ids2 = articles2.map((article) => article.id);
+    const ids = ids1.concat(ids2);
     const paths = ids.map((id) => ({ params: { id: id.toString() } }))
+    console.log(ids2);
     return{
         paths,
         fallback: false,
     };
 }
+
+export default BlogDetail;

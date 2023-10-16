@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .blog-content p{
-    @apply my-4;
+    @apply my-6 text-lg;
 }
 
 .blog-content em{
